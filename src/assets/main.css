@@ -1,0 +1,125 @@
+/* ---------------------------------------------------
+   Design tokens
+   Palette: lacquer black, washi cream, urushi red, aged brass
+--------------------------------------------------- */
+:root {
+  --bg: #0c0c0a;
+  --bg-panel: #161512;
+  --bg-panel-raised: #1f1e1a;
+  --ink: #f3ede1;
+  --ink-dim: #b6ac9c;
+  --line: #322f28;
+  --red: #a92f26;
+  --red-dim: #7a231d;
+  --brass: #a9895a;
+
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+
+  --container: 1240px;
+  --gutter: clamp(20px, 5vw, 72px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--brass);
+  letter-spacing: 0.03em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  padding: 14px 26px;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn-solid {
+  border-color: var(--red);
+  background: var(--red);
+  color: var(--ink);
+}
+
+.btn-solid:hover {
+  background: var(--red-dim);
+  border-color: var(--red-dim);
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--red);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
